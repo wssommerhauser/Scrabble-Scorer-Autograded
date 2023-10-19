@@ -111,12 +111,11 @@ function scorerPrompt(word) {
 function transform(word) {
    const scrabbleStructure = {};
    for (const key in oldPointStructure) { 
-      for (let i = 0; i <= oldPointStructure[key].length; i++) {
-         scrabbleStructure[oldPointStructure[key][i]] = oldPointStructure[`${i}`];
-         //console.log(scrabbleStructure);
+      for (let i = 0; i < oldPointStructure[key].length; i++) {
+         scrabbleStructure[oldPointStructure[key][i]] = oldPointStructure[key];
    }
 }
-   return scrabbleStructure ;
+   return scrabbleStructure;
 };
 
 let newPointStructure = transform(oldPointStructure);
